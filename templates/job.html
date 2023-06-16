@@ -91,7 +91,7 @@
         <p><strong>Salary:</strong> {{ job.salary }}</p>
     </div>
 
-    <button class="edit-button" onclick="window.open('http://127.0.0.1:5000/update/{{ job.id }}', '_blank')">Edit</button>
-    <button class="delete-button" onclick="window.open('http://127.0.0.1:5000/delete/{{ job.id }}', '_blank')">Delete</button>
+    <button class="edit-button" onclick="window.open('/update/{{ job.id }}', '_blank')">Edit</button>
+    <button class="delete-button" onclick="window.open('/delete/{{ job.id }}', '_blank')">Delete</button>
 </body>
 </html>
