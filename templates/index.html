@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1 class="header" onclick="goToHome()">Job Portal</h1>
+
+    <script>
+        function goToHome() {
+        window.location.href = "/";
+        }
+    </script>
+
+    <form action="/search" method="GET" class="search-form">
+        <input type="text" name="keyword" placeholder="Search jobs" class="search-input">
+        <button type="submit" class="search-button">Search</button>
+    </form>
+
+    <ul>
+        {% for job in jobs %}
+            <li>
+                <a href="/job/{{ job.id }}" class="job-item">
+                    <div class="job-info">
+                        <h3>{{ job.name }}</h3>
+                        <p>Company: {{ job.company }}</p>
+                        <p>Category: {{ job.category }}</p>
+                    </div>
+                    <span class="view-job-link">View Job</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <button class="add-job-button" onclick="window.open('http://127.0.0.1:5000/add_job')">Add a job</button>
+</body>
+</html>
