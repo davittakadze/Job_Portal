@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(58, 146, 53, 0.8);
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: rgba(113, 222, 107, 0.9);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .header:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .job-info {
+            background-color: rgba(58, 146, 53, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .job-info p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: whitesmoke;
+        }
+
+        .edit-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: rgba(5, 91, 0, 0.8);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .edit-button:hover {
+            background-color: #469;
+        }
+
+        .delete-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FF0000;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .delete-button:hover {
+            background-color: #FF5555;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="header" onclick="goToHome()">Job Portal</h1>
+
+    <script>
+        function goToHome() {
+            window.location.href = "/";
+        }
+    </script>
+
+    <div class="job-info">
+        <h1>{{ job.name }}</h1>
+        <p><strong>Description:</strong> {{ job.descr }}</p>
+        <p><strong>Company:</strong> {{ job.company }}</p>
+        <p><strong>Category:</strong> {{ job.category }}</p>
+        <p><strong>Salary:</strong> {{ job.salary }}</p>
+    </div>
+
+    <button class="edit-button" onclick="window.open('http://127.0.0.1:5000/update/{{ job.id }}', '_blank')">Edit</button>
+    <button class="delete-button" onclick="window.open('http://127.0.0.1:5000/delete/{{ job.id }}', '_blank')">Delete</button>
+</body>
+</html>
