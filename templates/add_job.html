@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Job Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: rgba(113, 222, 107, 0.8);
+      padding: 20px;
+    }
+
+    .form-container {
+      background-color: #FFFFFF;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-bottom: 2px solid #135;
+      margin-bottom: 20px;
+      transition: border-bottom-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="number"]:focus {
+      border-bottom-color: #469;
+      outline: none;
+    }
+
+    .submit-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: rgba(113, 222, 107, 0.8);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-button:hover {
+      background-color: rgba(58, 146, 53, 0.8);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <form action="" method="post">
+      <h2>Job Form</h2>
+
+      {{ form.csrf_token }}
+
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" class="text-input" required>
+
+      <label for="descr">Description</label>
+      <input type="text" name="descr" id="descr" class="text-input" required>
+
+      <label for="company">Company</label>
+      <input type="text" name="company" id="company" class="text-input" required>
+
+      <label for="category">Category</label>
+      <input type="text" name="category" id="category" class="text-input" required>
+
+      <label for="salary">Salary</label>
+      <input type="text" name="salary" id="salary" class="text-input" required>
+
+      <input type="submit" value="Submit" class="submit-button">
+    </form>
+  </div>
+</body>
+
+</html>
